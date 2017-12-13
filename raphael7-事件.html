@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="raphael.js" charset="utf-8"></script>
+  <script>
+    window.onload=function(){
+      let paper=Raphael(0,0,800,600);
+      let path=paper.path('M 100 100 L 400 100 400 300 100 300 Z');
+      path.attr('fill','yellow');
+      path.hover(function(){
+        this.attr('fill','red')
+      },function(){
+        this.attr('fill','yellow')
+      })
+
+      setTimeout(function(){
+        path.unhover();
+      },2000)
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
